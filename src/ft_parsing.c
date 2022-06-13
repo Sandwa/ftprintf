@@ -1,15 +1,20 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_parsing.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/13 21:56:57 by satadjin          #+#    #+#             */
+/*   Updated: 2022/06/13 22:11:26 by satadjin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "../include/ft_printf.h"
 #include <stdio.h>
 
 void	ft_putnbr_fd_unsigned(unsigned int n, int fd)
 {
-//	if (n == -2147483647)
-//		ft_putstr_fd("-2147483648", fd);
-//	if (n < 0)
-//	{
-//		ft_putchar_fd('-', fd);
-//		ft_putnbr_fd(-n, fd);
-//	}
 	if (n < 10)
 		ft_putchar_fd(n + '0', fd);
 	else if (n > 10)

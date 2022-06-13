@@ -6,7 +6,7 @@
 /*   By: sandratadjine <sandratadjine@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/11/06 17:16:28 by satadjin          #+#    #+#             */
-/*   Updated: 2019/12/25 18:46:41 by sandratadji      ###   ########.fr       */
+/*   Updated: 2022/06/13 21:56:16 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 # include <stdarg.h>
 # include "../libft/libft.h"
 
-typedef struct		s_check
+typedef struct s_check
 {
 	int				flagzero;
 	int				flagspace;
@@ -27,7 +27,6 @@ typedef struct		s_check
 	int				width;
 	int				precision;
 }					t_check;
-
 
 int					ft_flags(char *str, t_check *check, int *i);
 void				ft_precision(char *str, t_check *check, int *i);

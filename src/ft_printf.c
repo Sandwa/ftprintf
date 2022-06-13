@@ -6,7 +6,7 @@
 /*   By: sandratadjine <sandratadjine@student.42    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:36:26 by satadjin          #+#    #+#             */
-/*   Updated: 2019/12/25 18:50:20 by sandratadji      ###   ########.fr       */
+/*   Updated: 2022/06/13 22:10:58 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,10 @@ void	ft_printmod(va_list *args, char *str, int *i)
 		|| str[*i] == 'X' || str[*i] == '%')
 		ft_type(args, str, *i);
 	else
+	{
+		ft_putchar_fd('%', 1);
 		ft_putchar_fd(str[*i], 1);
+	}
 }
 
 int	ft_printf(const char *format, ...)
@@ -60,8 +63,6 @@ int	ft_printf(const char *format, ...)
 			ft_putchar_fd(str[i], 1);
 			ret = ft_strlen(str);
 		}
-		
-	//	printf(" str = %c\n", str[i]);
 		i++;
 	}
 	va_end(args);

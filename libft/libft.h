@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   libft.h                                            :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/13 21:10:49 by satadjin          #+#    #+#             */
+/*   Updated: 2022/06/13 21:48:07 by satadjin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #ifndef LIBFT_H
 # define LIBFT_H
 
@@ -6,10 +18,10 @@
 # include <string.h>
 # include <unistd.h>
 
-typedef struct		s_list
+typedef struct s_list
 {
-void				*content;
-struct s_list		*next;
+	void			*content;
+	struct s_list	*next;
 }					t_list;
 
 int					ft_atoi(const char *str);

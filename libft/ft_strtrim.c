@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   ft_strtrim.c                                       :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/06/13 21:09:48 by satadjin          #+#    #+#             */
+/*   Updated: 2022/06/13 21:49:13 by satadjin         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "libft.h"
 
 char	*ft_strtrim(char const *str, char const *set)
@@ -19,5 +31,5 @@ char	*ft_strtrim(char const *str, char const *set)
 		if (newstr)
 			ft_strlcpy(newstr, &str[start], end - start + 1);
 	}
-	return(newstr);
+	return (newstr);
 }
