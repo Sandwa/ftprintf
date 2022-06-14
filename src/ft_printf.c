@@ -23,7 +23,7 @@ void	ft_initialize_check(t_check *check)
 	check->precision = 0;
 }
 
-void	ft_printmod(va_list *args, char *str, int *i)
+void	ft_printmod(va_list *args, char *str, int *i, int *ret)
 {
 	t_check		*check;
 
@@ -36,12 +36,13 @@ void	ft_printmod(va_list *args, char *str, int *i)
 	if (str[*i] == 'c' || str[*i] == 's' || str[*i] == 'p' || str[*i] == 'd'
 		|| str[*i] == 'i' || str[*i] == 'u' || str[*i] == 'x' || str[*i] == 'x'
 		|| str[*i] == 'X' || str[*i] == '%')
-		ft_type(args, str, *i);
+		ft_type(args, str, *i, ret);
 	else
 	{
-		ft_putchar_fd('%', 1);
-		ft_putchar_fd(str[*i], 1);
+		ft_putchar_fd_printf('%', 1, ret);
+		ft_putchar_fd_printf(str[*i], 1, ret);
 	}
+	free(check);
 }
 
 int	ft_printf(const char *format, ...)
@@ -52,17 +53,15 @@ int	ft_printf(const char *format, ...)
 	va_list		args;
 
 	i = 0;
+	ret = 0;
 	va_start(args, format);
 	str = (char *)format;
 	while (str[i] != '\0')
 	{
 		if (str[i] == '%')
-			ft_printmod(&args, str, &i);
+			ft_printmod(&args, str, &i, &ret);
 		else
-		{
-			ft_putchar_fd(str[i], 1);
-			ret = ft_strlen(str);
-		}
+			ft_putchar_fd_printf(str[i], 1, &ret);
 		i++;
 	}
 	va_end(args);

@@ -4,6 +4,7 @@ NAME = libftprintf.a
 
 SRCS =		src/ft_parsing.c\
 			src/ft_printf.c\
+			src/utils.c\
 
 OBJS =		$(SRCS:.c=.o)
 LIB_OBJS =	./libft/*.o
