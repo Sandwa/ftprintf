@@ -3,7 +3,7 @@
 /*                                                        :::      ::::::::   */
 /*   ft_printf.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: sandratadjine <sandratadjine@student.42    +#+  +:+       +#+        */
+/*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/12/06 14:36:26 by satadjin          #+#    #+#             */
 /*   Updated: 2022/06/13 22:10:58 by satadjin         ###   ########.fr       */
@@ -11,28 +11,10 @@
 /* ************************************************************************** */
 
 #include "../include/ft_printf.h"
-#include <stdio.h>
-
-void	ft_initialize_check(t_check *check)
-{
-	check->flagzero = 0;
-	check->flagspace = 0;
-	check->flagplus = 0;
-	check->flagdash = 0;
-	check->width = 0;
-	check->precision = 0;
-}
 
 void	ft_printmod(va_list *args, char *str, int *i, int *ret)
 {
-	t_check		*check;
-
-	check = (t_check *)malloc(sizeof(t_check));
-	ft_initialize_check(check);
 	(*i)++;
-	ft_flags(str, check, i);
-	ft_width(str, check, i);
-	ft_precision(str, check, i);
 	if (str[*i] == 'c' || str[*i] == 's' || str[*i] == 'p' || str[*i] == 'd'
 		|| str[*i] == 'i' || str[*i] == 'u' || str[*i] == 'x' || str[*i] == 'x'
 		|| str[*i] == 'X' || str[*i] == '%')
@@ -42,7 +24,6 @@ void	ft_printmod(va_list *args, char *str, int *i, int *ret)
 		ft_putchar_fd_printf('%', 1, ret);
 		ft_putchar_fd_printf(str[*i], 1, ret);
 	}
-	free(check);
 }
 
 int	ft_printf(const char *format, ...)

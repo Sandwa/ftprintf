@@ -23,47 +23,6 @@ void	ft_putnbr_fd_unsigned(unsigned int n, int fd, int *ret)
 	}
 }
 
-int	ft_flags(char *str, t_check *check, int *i)
-{
-	while (str[*i] == '-' || str[*i] == ' ' || str[*i] == '0' || str[*i] == '+')
-	{
-		if (str[*i] == '-')
-			check->flagdash = 1;
-		if (str[*i] == '+')
-			check->flagplus = 1;
-		if (str[*i] == '0')
-			check->flagzero = 1;
-		if (str[*i] == ' ')
-			check->flagspace = 1;
-		*i += 1;
-	}
-	if (check->flagplus == 1 && check->flagspace == 1)
-		check->flagspace = 0;
-	if (check->flagdash == 1 && check->flagzero)
-		check->flagzero = 0;
-	return (*i);
-}
-
-void	ft_width(char *str, t_check *check, int *i)
-{
-	if (ft_isdigit(str[*i]))
-		check->width = ft_atoi(str + *i);
-	while (ft_isdigit(str[*i]))
-		(*i)++;
-}
-
-void	ft_precision(char *str, t_check *check, int *i)
-{
-	if (str[*i] == '.')
-	{
-		(*i)++;
-		if (ft_isdigit(str[*i]))
-			check->precision = ft_atoi(&str[*i]);
-	}
-	while (ft_isdigit(str[*i]) || str[*i] == '*')
-		(*i)++;
-}
-
 void	ft_type(va_list *args, char *str, int i, int *ret)
 {
 	if (str[i] == 'd' || str[i] == 'i')
