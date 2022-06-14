@@ -6,7 +6,7 @@
 /*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 20:59:05 by satadjin          #+#    #+#             */
-/*   Updated: 2022/06/13 21:52:22 by satadjin         ###   ########.fr       */
+/*   Updated: 2022/06/14 20:58:32 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ char	*ft_itoa_base_ad(unsigned long long n, char *base)
 		free(s1);
 		free(s2);
 	}
-	else if (n < (unsigned int)ft_strlen(base) && n >= 0)
+	else if (n < (unsigned int)ft_strlen(base))
 	{
 		str[0] = base[n];
 		str[1] = '\0';
