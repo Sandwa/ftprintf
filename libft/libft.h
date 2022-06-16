@@ -6,7 +6,7 @@
 /*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:10:49 by satadjin          #+#    #+#             */
-/*   Updated: 2022/06/13 21:48:07 by satadjin         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:55:08 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,6 +35,7 @@ int					ft_isprint(int c);
 char				*ft_itoa(int n);
 char				*ft_itoa_base(unsigned int n, char *base);
 char				*ft_itoa_base_ad(unsigned long long n, char *base);
+char				*ft_check_ad(unsigned long long n, char *base);
 void				*ft_memccpy(void *dst, const void *src, int c, size_t n);
 void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);

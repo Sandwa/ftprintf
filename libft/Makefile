@@ -1,12 +1,12 @@
 # **************************************************************************** #
 #                                                                              #
 #                                                         :::      ::::::::    #
-#    makefile                                           :+:      :+:    :+:    #
+#    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
 #    By: satadjin <satadjin@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2019/11/08 10:44:34 by satadjin          #+#    #+#              #
-#    Updated: 2019/11/14 11:40:53 by satadjin         ###   ########.fr        #
+#    Updated: 2022/06/16 20:55:38 by satadjin         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -71,10 +71,10 @@ all: $(NAME)
 	gcc -c $(CFLAGS) -I $(INCLUDES) $^ -o $(^:.c=.o)
 	
 $(NAME): $(OBJS)
-	ar	rc $(NAME) $(OBJS)
+	ar	-rc $(NAME) $(OBJS)
 
 bonus : $(NAME) $(BONUS_OBJS)
-	ar rcs $(NAME) $(BONUS_OBJS)
+	ar -rcs $(NAME) $(BONUS_OBJS)
 
 clean:
 	rm -f $(OBJS) $(BONUS_OBJS)

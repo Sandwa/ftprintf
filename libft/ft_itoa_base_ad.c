@@ -6,11 +6,19 @@
 /*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 20:59:05 by satadjin          #+#    #+#             */
-/*   Updated: 2022/06/14 20:58:32 by satadjin         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:54:52 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+
+char	*ft_check_ad(unsigned long long n, char *base)
+{
+	if (n == 0)
+		return (ft_strdup("(nil)"));
+	else
+		return (ft_itoa_base_ad(n, base));
+}
 
 char	*ft_itoa_base_ad(unsigned long long n, char *base)
 {

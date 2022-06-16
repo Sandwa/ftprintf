@@ -6,7 +6,7 @@
 /*   By: satadjin <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/13 21:56:57 by satadjin          #+#    #+#             */
-/*   Updated: 2022/06/13 22:11:26 by satadjin         ###   ########.fr       */
+/*   Updated: 2022/06/16 21:56:11 by satadjin         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,11 +61,13 @@ void	ft_itoa_free(va_list *args, int *ret, char c)
 	str = NULL;
 	if (c == 'p')
 	{
-		s1 = ft_itoa_base_ad(va_arg(*args, unsigned long long),
-				"0123456789abcdef");
+		s1 = ft_check_ad(va_arg(*args, unsigned long long), "0123456789abcdef");
 		str = ft_strjoin("0x", s1);
+		if (ft_strncmp("(nil)", s1, 5) != 0)
+			ft_putstr_fd_printf(str, 1, ret);
+		else
+			ft_putstr_fd_printf(s1, 1, ret);
 		free(s1);
-		ft_putstr_fd_printf(str, 1, ret);
 	}
 	if (c == 'x')
 	{
@@ -77,6 +79,5 @@ void	ft_itoa_free(va_list *args, int *ret, char c)
 		str = ft_itoa_base(va_arg(*args, unsigned int), "0123456789ABCDEF");
 		ft_putstr_fd_printf(str, 1, ret);
 	}
-	if (str)
-		free(str);
+	free(str);
 }
